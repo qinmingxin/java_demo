@@ -13,5 +13,7 @@ public interface IUserDao extends JpaRepository<UserDto, Long>{
 	 
 	@Query("select count(id) from UserDto u where u.username = :username")
 	int countByName(@Param("username") String name);
+	
+	UserDto findByUsernameAndPassword(String username,String password); 
 
 }

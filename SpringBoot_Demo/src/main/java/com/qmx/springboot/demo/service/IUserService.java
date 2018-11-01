@@ -6,4 +6,6 @@ public interface IUserService {
 
 	void addUser(UserDto userDto);
 
+	String login(UserDto userDto);
+	
 }

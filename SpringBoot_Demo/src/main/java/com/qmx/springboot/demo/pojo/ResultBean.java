@@ -17,18 +17,21 @@ public class ResultBean<T> {
 
 	@ApiModelProperty("返回数据")
 	private T data; 
+	
+	private boolean success;
 
 	public ResultBean(T data) {
-		this("SUCCESS", ResultEnum.SUCCESS.code, data);
+		this("SUCCESS", ResultEnum.SUCCESS.code, data,true);
 	}
 	
 	public ResultBean() {
 	}
-	public ResultBean(String msg, int code, T data) {
+	public ResultBean(String msg, int code, T data,boolean success) {
 		super();
 		this.msg = msg;
 		this.code = code;
 		this.data = data;
+		this.success=success;
 	}
 
 }
